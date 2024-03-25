@@ -76,15 +76,16 @@ module.exports = class DB {
   }
 
   async delete(id) {
-    let dataArray = await this.getJsonArray();
+    let dataArray = await this.getJsonArray(); //beolvassa az adattömböt
     let deleteIndex = 0;
+    // megkeresem az adattömbben az aktuális id-t és ha egyezés van az lesz a deleteIndex
     for (let k in dataArray) {
       if (dataArray[k].id == id) {
         deleteIndex = k;
         break;
       }
     }
-
+    // ezután ki kell venni ezt az adatot a tömbből splice metódussal:
     dataArray.splice(deleteIndex, 1);
     await this.write(dataArray);
     return id;
