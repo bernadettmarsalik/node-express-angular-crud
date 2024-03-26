@@ -43,8 +43,8 @@ router.put("/:entity/:id", async (req, res, next) => {
 /*  DELETE entity (update user) with ID! */
 router.delete("/:entity/:id", async (req, res, next) => {
   const db = new DB(req.params.entity);
-  let deletedData = await db.update(id); //itt csak id-t várok
-  res.json(deletedData); //visszaadja az új adatot
+  let deleted = await db.delete(req.params.id);
+  res.send(deleted);
 });
 
 module.exports = router;

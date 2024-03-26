@@ -1,0 +1,25 @@
+<h1>Create new User</h1>
+<ng-container *ngFor="let col of columns">
+  <div class="form-group" *ngIf="col.key !== 'id'">
+    <label for="">{{ col.title }}</label>
+    <input
+      *ngIf="!col.subKey && col.key !== 'name'"
+      [(ngModel)]="user[col.key]"
+      type="text"
+      class="form-control"
+    />
+    <input
+      *ngIf="col.subKey === 'first'"
+      [(ngModel)]="user.firstName"
+      type="text"
+      class="form-control"
+    />
+    <input
+      *ngIf="col.subKey === 'last'"
+      [(ngModel)]="user.lastName"
+      type="text"
+      class="form-control"
+    />
+  </div>
+</ng-container>
+<button (click)="create(user)" class="btn btn-block btn-primary">Create</button>
