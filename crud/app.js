@@ -21,6 +21,11 @@ app.use(bodyParser.json({ extended: true })); //itt is be kell állítani a body
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/api", require("./routes/api"));
