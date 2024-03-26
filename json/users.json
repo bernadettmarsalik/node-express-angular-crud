@@ -1530,24 +1530,6 @@
         "address": "223 Hausman Street, Savannah, Kansas, 5780"
     },
     {
-        "name": {},
-        "id": 96,
-        "isActive": "yes",
-        "age": "27",
-        "company": "AwesomeCompany",
-        "email": "berni@email.com",
-        "address": "Debrecen, Hungary"
-    },
-    {
-        "name": {},
-        "isActive": "no",
-        "age": "32",
-        "company": "Krusty Krab",
-        "email": "bobsponge@bikinibottomeial.com",
-        "address": "Bikini Bottom",
-        "id": 97
-    },
-    {
         "isActive": "yes",
         "age": "285",
         "company": "Goth LTD",
